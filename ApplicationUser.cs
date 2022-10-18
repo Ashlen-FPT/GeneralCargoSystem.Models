@@ -19,5 +19,7 @@ namespace GeneralCargoSystem.Models
 
         [NotMapped]
         public string Role { get; set; }
+
+        public byte[] UserImage { get; set; }
     }
 }
