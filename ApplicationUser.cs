@@ -21,5 +21,6 @@ namespace GeneralCargoSystem.Models
         public string Role { get; set; }
 
         public byte[] UserImage { get; set; }
+        public bool UserStatus { get; set; }
     }
 }
