@@ -22,5 +22,6 @@ namespace GeneralCargoSystem.Models
 
         public byte[] UserImage { get; set; }
         public bool UserStatus { get; set; }
+        public DateTime CreatedOnDateTime { get; set; }
     }
 }
