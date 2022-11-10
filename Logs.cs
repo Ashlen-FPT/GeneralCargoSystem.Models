@@ -10,14 +10,16 @@ namespace GeneralCargoSystem.Models
     {
         public int Id { get; set; }
 
-        public string UserName { get; set; }
+        public string UserName { get; set; } = string.Empty;
 
-        public string UserEmail { get; set; }
+        public string UserEmail { get; set; } = string.Empty;
 
-        public string LogType { get; set; }
+        public string LogType { get; set; } = string.Empty;
 
         public DateTime DateTime { get; set; }
 
-        public string AffectedTable { get; set; }
+        public string AffectedTable { get; set; } = string.Empty;
+
+        public string? AdditionalData { get; set; }
     }
 }

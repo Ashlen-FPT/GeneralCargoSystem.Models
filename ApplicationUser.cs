@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace GeneralCargoSystem.Models
 {
-    public  class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         [Required]
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
         [Required]
-        public string LastName { get; set; }
+        public string LastName { get; set; } = string.Empty;
 
         [NotMapped]
-        public string Role { get; set; }
+        public string Role { get; set; } = string.Empty;
 
-        public byte[] UserImage { get; set; }
+        public byte[]? UserImage { get; set; }
         public bool UserStatus { get; set; }
         public DateTime CreatedOnDateTime { get; set; }
     }
