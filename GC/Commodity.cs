@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace GeneralCargoSystem.Models.GC
 {
-    public class FPTSites
+    public class Commodity
     {
         public int Id { get; set; }
-        [Required]
-        [Display(Name = "Warehouse")]
-        public string SiteLocation { get; set; } = string.Empty;
 
         [Required]
-        [Display(Name = "Location ID")]
-        public string LocationId { get; set; } = string.Empty;
-
+        [Display(Name ="Commodity Item")]
+        public string CommodityItem { get; set; } = string.Empty;
     }
 }
