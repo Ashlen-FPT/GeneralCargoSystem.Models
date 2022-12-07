@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -45,6 +46,8 @@ namespace GeneralCargoSystem.Models.GC
         public  LogisticalTransporter LogisticalTransporter { get; set; }
 
         [Required]
+        [RegularExpression(@"^(?![\W_]+$)(?!\d+$)[a-zA-Z0-9]+$", ErrorMessage = "Please enter a valid Registration(remove spaces & special characters if any).")]
+        [Remote(action: "IsRegistrationExist", controller: "GCBookings", AdditionalFields = "Id", ErrorMessage = "Registration Invalid ")]
         public string Registration { get; set; } = string.Empty;
         //public string TrailerRegistration { get; set; } = string.Empty; 
         public int Quantity { get; set; }
@@ -57,11 +60,17 @@ namespace GeneralCargoSystem.Models.GC
         public  Commodity Commodity { get; set; }
 
         [Display(Name = "Name")]
+        [RegularExpression(@"^[a-zA-Z ']+$", ErrorMessage = "Use letters only please")]
         public string Name { get; set; } = string.Empty; // Auto-User Name
 
         [Display(Name = "Phone Number")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Phone Number.")]
         public string PhoneNumber { get; set; } = string.Empty; // Auto-Phone Number
+
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; } = string.Empty; // Auto-User Email
+
+        [Display(Name = "Booking Created On")]
         public DateTime CreatedOn { get; set; }// Booking Creation Date
 
         [Required]
