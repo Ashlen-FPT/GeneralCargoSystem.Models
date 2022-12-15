@@ -83,5 +83,9 @@ namespace GeneralCargoSystem.Models.GC
         [DataType(DataType.MultilineText)]
         public string? Comments { get; set; }
 
+        [Required]
+        [Display(Name = "Import / Export")]
+        public string Trade { get; set; } = string.Empty;
+
     }
 }
